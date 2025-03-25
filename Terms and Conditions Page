@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>Delphi3 - DeepLearn Terms and Conditions</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		
+		.container {
+			width: 800px;
+			margin: 50px auto;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		h1 {
+			text-align: center;
+		}
+		
+		p {
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Delphi3 - DeepLearn Terms and Conditions</h1>
+		<p>Last Updated: [Insert Date]</p>
+		
+		<h2>1. Introduction</h2>
+		<p>These Terms and Conditions ("Terms") govern your use of the Delphi3 - DeepLearn service (the "Service"). By using the Service, you agree to be bound by these Terms.</p>
+		
+		<h2>2. Risk Disclosure</h2>
+		<p>Any money invested through the Service is done so at your own risk. You could get back less money than you put in. The value of your investment can fluctuate, and you may not get back the amount you invested.</p>
+		
+		<h2>3. Liability</h2>
+		<p>In no event will Delphi3 - DeepLearn be liable for any damages, including but not limited to incidental, consequential, or punitive damages, arising out of the use of the Service.</p>
+		
+		<h2>4. Governing Law</h2>
+		<p>These Terms will be governed by and construed in accordance with the laws of England and Wales.</p>
+		
+		<h2>5. Changes to Terms</h2>
+		<p>Delphi3 - DeepLearn reserves the right to modify these Terms at any time. Your continued use of the Service will be deemed acceptance of any changes to these Terms.</p>
+		
+		<h2>6. Entire Agreement</h2>
+		<p>These Terms constitute the entire agreement between you and Delphi3 - DeepLearn regarding the use of the Service.</p>
+		
+		<h2>7. Contact Us</h2>
+		<p>If you have any questions or concerns about these Terms, please contact us at [Insert Contact Information].</p>
+	</div>
+</body>
+</html>
