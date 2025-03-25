@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delphi3 - DeepLearn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .home-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .home-buttons button {
+            width: 200px;
+            height: 40px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .home-buttons button:hover {
+            background-color: #3e8e41;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        form button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .questions {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation menu -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home section -->
+    <section id="home">
+        <h1>Welcome to Delphi3 - DeepLearn</h1>
+        <div class="home-buttons">
+            <button onclick="showSection('stock-predictor')">Stock Predictor</button>
+            <button onclick="showSection('questions')">Questions Page</button>
+            <button onclick="showSection('paywall')">Paywall</button>
+            <button onclick="showSection('terms')">Terms and Conditions</button>
+            <button onclick="showSection('about')">About Us</button>
+            <button onclick="showSection('contact')">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- Stock Predictor section -->
+    <section id="stock-predictor" style="display: none;">
+        <h1>Stock Market Predictor</h1>
+        <form id="stockForm">
+            <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol" required>
+            <button type="submit">Predict</button>
+        </form>
+        <div class="result" id="result"></div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" style="display: none;">
+        <h1>About Us</h1>
+        <p>Delphi3 - DeepLearn is a cutting-edge stock predictor that leverages deep learning to forecast market trends with unparalleled accuracy.</p>
+    </section>
+
+    <!-- Services section -->
+    <section id="services" style="display: none;">
+        <h1>Our Services</h1>
+        <p>Our algorithm provides personalized investment predictions, helping you make informed decisions and achieve your financial goals.</p>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" style="display: none;">
+        <h1>Contact Us</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Questions section -->
+    <section id="questions" style="display: none;">
+        <h1>Questions Page</h1>
+        <form id="questionForm">
