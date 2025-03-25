@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delphi3</title>
+    <style>
+        body {
+            font-family: 'Candara', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative; /* Changed from fixed to relative */
+            width: 100%;
+        }
+        .nav-button {
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Delphi3 - Welcome to the Future...</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h2>About Us</h2>
+            <p>Delphi3 - DeepLearn is a cutting-edge stock predictor that leverages deep learning to forecast market trends with unparalleled accuracy. Access exclusive predictions and insights for a monthly fee, and share your experience with the community by writing reviews..</p>
+        </div>
+        <div class="card">
+            <h2>Our Services</h2>
+            <p>Our algorithm provides personalized investment predictions, helping you make informed decisions and achieve your financial goals. With our premium services, gain exclusive access to tailored advice, market insights, and predictive analytics for a especially low monthly fee..</p>
+        </div>
+        <button class="nav-button" onclick="location.href='page2.html'">Go to Log/Sign in page</button>
+        <button class="nav-button" onclick="location.href='page3.html'">Go to Terms and Conditions</button>
+    </div>
+    <footer>
+    <p>&copy; 2025 DELPHI3 
+    -DEEPLEARN STOCK PREDICTOR. All rights reserved.</p>
+    </footer>
+</body>
+</html>
