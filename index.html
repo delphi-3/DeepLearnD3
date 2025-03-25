@@ -1,75 +1,6 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delphi3 - DeepLearn</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .home-buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        .home-buttons button {
-            width: 200px;
-            height: 40px;
-            margin: 10px 0;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .home-buttons button:hover {
-            background-color: #3e8e41;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        form {
-            background: #fff;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-        }
-        form button {
-            background: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .questions {
-            background: #fff;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .question {
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-        }
-    </style>
+    <!-- ... -->
 </head>
 <body>
     <!-- Navigation menu -->
@@ -83,6 +14,8 @@
     <section id="home">
         <h1>Welcome to Delphi3 - DeepLearn</h1>
         <div class="home-buttons">
+            <button onclick="showSection('signup')">Sign Up</button>
+            <button onclick="showSection('login')">Login</button>
             <button onclick="showSection('stock-predictor')">Stock Predictor</button>
             <button onclick="showSection('questions')">Questions Page</button>
             <button onclick="showSection('paywall')">Paywall</button>
@@ -90,6 +23,46 @@
             <button onclick="showSection('about')">About Us</button>
             <button onclick="showSection('contact')">Contact Us</button>
         </div>
+    </section>
+
+    <!-- Sign-up section -->
+    <section id="signup" style="display: none;">
+        <h1>Sign Up</h1>
+        <form id="signupForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <!-- Login section -->
+    <section id="login" style="display: none;">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <!-- Payment section -->
+    <section id="payment" style="display: none;">
+        <h1>Payment</h1>
+        <form id="paymentForm">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+            <label for="expirationDate">Expiration Date:</label>
+            <input type="text" id="expirationDate" name="expirationDate" required><br><br>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required><br><br>
+            <button type="submit">Submit Payment</button>
+        </form>
     </section>
 
     <!-- Stock Predictor section -->
@@ -100,6 +73,7 @@
             <button type="submit">Predict</button>
         </form>
         <div class="result" id="result"></div>
+        <div class="social-media-analysis" id="social-media-analysis"></div>
     </section>
 
     <!-- About section -->
@@ -117,9 +91,8 @@
     <!-- Contact section -->
     <section id="contact" style="display: none;">
         <h1>Contact Us</h1>
+        <p>Email: <a href="mailto:thomasetherington2013@gmail.com">thomasetherington2013@gmail.com</a></p>
         <form>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br><br>
             <label for="message">Message:</label>
             <textarea id="message" name="message"></textarea><br><br>
             <button type="submit">Send</button>
@@ -127,6 +100,91 @@
     </section>
 
     <!-- Questions section -->
-    <section id="questions" style="display: none;">
-        <h1>Questions Page</h1>
-        <form id="questionForm">
+    <section id="questions" style="display:<!-- Questions section -->
+		<section id="questions" style="display: none;">
+			<h1>Questions Page</h1>
+			<form id="questionForm">
+				<input type="text" id="name" name="name" placeholder="Your Name" required>
+				<textarea id="question" name="question" placeholder="Your Question" required></textarea>
+				<button type="submit">Submit</button>
+			</form>
+			<div class="questions" id="questions">
+				<h2>Questions</h2>
+				<!-- Questions will be displayed here -->
+			</div>
+		</section>
+	
+		<!-- Paywall section -->
+		<section id="paywall" style="display: none;">
+			<h1>Paywall</h1>
+			<form>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email"><br><br>
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password"><br><br>
+				<button type="submit">Login</button>
+			</form>
+		</section>
+	
+		<!-- Terms and Conditions section -->
+		<section id="terms" style="display: none;">
+			<h1>Delphi3 - DeepLearn Terms and Conditions</h1>
+			<p>Last Updated: [Insert Date]</p>
+			<!-- Add terms and conditions content here -->
+		</section>
+	
+		<script>
+			let signedUp = false;
+			let paymentMade = false;
+	
+			// Stock predictor functionality
+			document.getElementById('stockForm').addEventListener('submit', function(event) {
+				event.preventDefault();
+				const stockSymbol = document.getElementById('stockSymbol').value;
+				// Use an API to retrieve current stock price and social media data
+				fetch(`https://api.example.com/stock/${stockSymbol}`)
+					.then(response => response.json())
+					.then(data => {
+						const currentPrice = data.currentPrice;
+						const socialMediaData = data.socialMediaData;
+						const sentimentAnalysis = analyzeSentiment(socialMediaData);
+						const investmentRecommendation = getInvestmentRecommendation(sentimentAnalysis, currentPrice);
+						document.getElementById('result').innerText = `Current Price: $${currentPrice}`;
+						document.getElementById('social-media-analysis').innerText = `Social Media Sentiment: ${sentimentAnalysis}\nInvestment Recommendation: ${investmentRecommendation}`;
+					})
+					.catch(error => console.error(error));
+			});
+	
+			// Analyze sentiment of social media data
+			function analyzeSentiment(socialMediaData) {
+				// Use a natural language processing library to analyze sentiment
+				const positiveCount = socialMediaData.filter(post => post.sentiment === 'positive').length;
+				const negativeCount = socialMediaData.filter(post => post.sentiment === 'negative').length;
+				const neutralCount = socialMediaData.filter(post => post.sentiment === 'neutral').length;
+				const sentiment = positiveCount > negativeCount ? 'Positive' : negativeCount > positiveCount ? 'Negative' : 'Neutral';
+				return sentiment;
+			}
+	
+			// Get investment recommendation based on sentiment analysis and current price
+			function getInvestmentRecommendation(sentimentAnalysis, currentPrice) {
+				// Use a simple decision tree to determine investment recommendation
+				if (sentimentAnalysis === 'Positive' && currentPrice < 100) {
+					return 'Buy';
+				} else if (sentimentAnalysis === 'Negative' && currentPrice > 50) {
+					return 'Sell';
+				} else {
+					return 'Hold';
+				}
+			}
+	
+			// Show section functionality
+			function showSection(sectionId) {
+				var sections = document.getElementsByTagName('section');
+				for (var i = 0; i < sections.length; i++) {
+					sections[i].style.display = 'none';
+				}
+				document.getElementById(sectionId).style.display = 'block';
+			}
+		</script>
+	</body>
+	</html>
