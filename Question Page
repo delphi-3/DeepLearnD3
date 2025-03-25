@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        form button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .questions {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Questions Page</h1>
+    </header>
+    <div class="container">
+        <form id="questionForm">
+            <h2>Ask a Question</h2>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <textarea id="question" name="question" placeholder="Your Question" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="questions" id="questions">
+            <h2>Questions</h2>
+            <!-- Questions will be displayed here -->
+        </div>
+    </div>
+    <script>
+        document.getElementById('questionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const question = document.getElementById('question').value;
+            const questionsDiv = document.getElementById('questions');
+            const newQuestion = document.createElement('div');
+            newQuestion.classList.add('question');
+            newQuestion.innerHTML = `<strong>${name}:</strong> ${question}`;
+            questionsDiv.appendChild(newQuestion);
+            document.getElementById('questionForm').reset();
+        });
+    </script>
+</body>
+</html>
