@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delphi3 - DeepLearn</title>
+    <style>
+        /* Combined styles from all files */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Add more styles as needed */
+        .home-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .home-buttons button {
+            width: 200px;
+            height: 40px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .home-buttons button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation menu -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home section -->
+    <section id="home">
+        <h1>Welcome to Delphi3 - DeepLearn</h1>
+        <div class="home-buttons">
+            <button onclick="location.href='#stock-predictor'">Stock Predictor</button>
+            <button onclick="location.href='#questions'">Questions Page</button>
+            <button onclick="location.href='#paywall'">Paywall</button>
+            <button onclick="location.href='#terms'">Terms and Conditions</button>
+            <button onclick="location.href='#about'">About Us</button>
+            <button onclick="location.href='#contact'">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- Stock Predictor section -->
+    <section id="stock-predictor">
+        <h1>Stock Market Predictor</h1>
+        <form id="stockForm">
+            <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol" required>
+            <button type="submit">Predict</button>
+        </form>
+        <div class="result" id="result"></div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Delphi3 - DeepLearn is a cutting-edge stock predictor that leverages deep learning to forecast market trends with unparalleled accuracy.</p>
+    </section>
+
+    <!-- Services section -->
+    <section id="services">
+        <h1>Our Services</h1>
+        <p>Our algorithm provides personalized investment predictions, helping you make informed decisions and achieve your financial goals.</p>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Questions section -->
+    <section id="questions">
+        <h1>Questions Page</h1>
+        <form id="questionForm">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <textarea id="question" name="question" placeholder="Your Question" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="questions" id="questions">
+            <h2>Questions</h2>
+            <!-- Questions will be displayed here -->
+        </div>
+    </section>
+
+    <!-- Paywall section -->
+    <section id="paywall">
+        <h1>Paywall</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <!-- Terms and Conditions section -->
+    <section id="terms">
+        <h1>Delphi3 - DeepLearn Terms and Conditions</h1>
+        <p>Last Updated: [Insert Date]</p>
+        <!-- Add terms and conditions content here -->
+    </section>
+
+    <script>
+        // Combined scripts from all
