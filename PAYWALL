@@ -1,0 +1,100 @@
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delphi3 - DeepLearn Sign-up</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		
+		.container {
+			width: 300px;
+			margin: 50px auto;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		.plan-details {
+			margin-bottom: 20px;
+		}
+		
+		.plan-details ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		
+		.plan-details li {
+			margin-bottom: 10px;
+		}
+		
+		.sign-up-form {
+			margin-bottom: 20px;
+		}
+		
+		.sign-up-form label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		
+		.sign-up-form input[type="text"], .sign-up-form input[type="email"], .sign-up-form input[type="password"] {
+			width: 100%;
+			height: 40px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+		}
+		
+		.sign-up-form input[type="submit"] {
+			width: 100%;
+			height: 40px;
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		.terms-and-conditions {
+			font-size: 12px;
+			color: #666;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Delphi3 - DeepLearn Sign-up</h2>
+		<div class="plan-details">
+			<h3>Plan Details:</h3>
+			<ul>
+				<li><strong>Monthly Fee:</strong> £1</li>
+				<li><strong>Exclusive Predictions:</strong> Get access to our cutting-edge stock predictions and insights</li>
+				<li><strong>Personalized Guidance:</strong> Receive tailored advice from our expert team</li>
+				<li><strong>Market Insights:</strong> Stay ahead of the curve with our real-time market updates</li>
+			</ul>
+		</div>
+		<form class="sign-up-form">
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email"><br><br>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password"><br><br>
+			<label for="card-number">Card Number:</label>
+			<input type="text" id="card-number" name="card-number"><br><br>
+			<label for="expiration-date">Expiration Date:</label>
+			<input type="text" id="expiration-date" name="expiration-date"><br><br>
+			<label for="cvv">CVV:</label>
+			<input type="text" id="cvv" name="cvv"><br><br>
+			<input type="submit" value="Sign up and Pay £1">
+		</form>
+		<div class="terms-and-conditions">
+			<p>By signing up, you agree to our terms and conditions.</p>
+			<p>Your monthly fee of £1 will be automatically charged every month.</p>
+			<p>You can cancel your subscription at any time.</p>
+		</div>
+	</div>
+</body>
+</html>
