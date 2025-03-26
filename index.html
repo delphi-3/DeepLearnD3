@@ -46,7 +46,7 @@
 
     <!-- Stock Predictor section -->
     <section id="stock-predictor" style="display: none;">
-        <h1>Stock Market Predictor</h1>
+        <h1>Delphi  Predictor</h1>
         <form id="stockForm">
             <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol" required>
             <button type="submit" onclick="predictStock()">Predict</button>
@@ -152,7 +152,7 @@
 	function predictStock() {
 		const stockSymbol = document.getElementById('stockSymbol').value;
 		// Use an API to retrieve current stock price and social media data
-		fetch(`https://api.example.com/stock/${stockSymbol}`)
+		fetch(`https://x.com/stock/${stockSymbol}`)
 			.then(response => response.json())
 			.then(data => {
 				const currentPrice = data.currentPrice;
