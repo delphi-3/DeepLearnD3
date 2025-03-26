@@ -1,195 +1,54 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delphi3 - DeepLearn</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Delphi3 - DeepLearn</title>
 </head>
 <body>
-    <!-- Navigation menu -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#login">Login</a></li>
-            <li><a href="#signup">Sign Up</a></li>
-        </ul>
-    </nav>
-
-    <!-- Home section -->
-    <section id="home" style="display: none;">
-        <h1>Welcome to Delphi3 - DeepLearn</h1>
-        <div class="home-buttons">
-            <button onclick="showSection('stock-predictor')">Stock Predictor</button>
-            <button onclick="showSection('donate')">Donate</button>
-            <button onclick="showSection('terms')">Terms and Conditions</button>
-        </div>
-    </section>
-
-    <!-- Sign-up section -->
-    <section id="signup" style="display: block;">
-        <h1>Sign Up</h1>
-        <form id="signupForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            <button type="submit">Sign Up</button>
-        </form>
-    </section>
-
-    <!-- Login section -->
-    <section id="login" style="display: none;">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            <button type="submit">Login</button>
-        </form>
-    </section>
-
-    <!-- Stock Predictor section -->
-    <section id="stock-predictor" style="display: none;">
-        <h1>Stock Market Predictor</h1>
-        <form id="stockForm">
-            <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol" required>
-            <button type="submit" onclick="predictStock()">Predict</button>
-        </form>
-        <div class="result" id="result"></div>
-        <div class="social-media-analysis" id="social-media-analysis"></div>
-    </section>
-
-    <!-- Donate section -->
-    <section id="donate" style="display: none;">
-        <h1>Donate</h1>
-        <form id="donateForm">
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" required><br><br>
-            <button type="submit">Donate</button>
-        </form>
-    </section>
-
-    <!-- Terms and Conditions section -->
-    <section id="terms" style="display: none;">
-        <h1>Delphi3 - DeepLearn Terms and Conditions</h1>
-        <p>Last Updated: 25/03/2025</p>
-        <h2>Introduction</h2>
-        <p>These Terms and Conditions ("Terms") govern your use of the Delphi3 - DeepLearn website and services. By using our website and services, you agree to be bound by these Terms.</p>
-        <h2>Definitions</h2>
-        <p>In these Terms, the following definitions apply:</p>
-        <ul>
-            <li>"We" or "us" means Delphi3 - DeepLearn.</li>
-            <li>"You" means the user of our website and services.</li>
-            <li>"Services" means the services provided by us, including the stock prediction tool.</li>
-        </ul>
-        <h2>Use of Services</h2>
-        <p>You must use our services only for lawful purposes and in accordance with these Terms. You must not:</p>
-        <ul>
-            <li>Use our services for any unlawful or unauthorized purpose.</li>
-            <li>Interfere with or disrupt our services.</li>
-            <li>Use our services to send spam or unsolicited messages.</li>
-        </ul>
-        <h2>Intellectual Property</h2>
-        <p>All intellectual property rights in our website and services, including the stock prediction tool, are owned by us or our licensors. You have no right to use our intellectual property except as expressly permitted by these Terms.</p>
-        <h2>Disclaimer of Warranties</h2>
-        <p>Our services are provided on an "as is" and "as available" basis. We disclaim all warranties, express or implied, including the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
-        <h2>Limitation of Liability</h2>
-        <p>We will not be liable for any damages, including consequential, special, or punitive damages, arising out of or in connection with these Terms or the use of our services.</p>
-        <h2>Governing Law</h2>
-        <p>These Terms will be governed by and construed in accordance with the laws of England and Wales.</p>
-        <h2>Changes to Terms</h2>
-        <p>We reserve the right to modify or update these Terms at any time without prior notice. Your continued use of our services will be deemed acceptance of any changes to these Terms.</p>
-    </section>
-
-    <script>
-        // Show sign-up form initially
-        document.getElementById('signup').style.display = 'block';
-
-        // Sign-up form submission
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Store user data in local storage
-            const userData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                password: document.getElementById('password').value
-            };
-            localStorage.setItem('userData', JSON.stringify(userData));
-            // Show login form after sign-up
-            document.getElementById('signup').style.display = 'none';
-            document.getElementById('login').style.display = 'block';
-        });
-
-        // Login form submission
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Retrieve user data from local storage
-            const storedUserData = JSON.parse(localStorage.getItem('userData'));
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            if (email === storedUserData.email && password === storedUserData.password) {
-                // Login successful, show home screen
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('home').style.display = 'block';
-            } else {
-                alert('Invalid email or password');
-            }
-        });
-
-        // Predict stock button click
-        function predictStock() {
-            const stockSymbol = document.getElementById('stockSymbol').value;
-            // Use Google Finance API to retrieve stock data
-            fetch(`https://finance.google.com/finance?q=${stockSymbol}`)
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(data, 'text/html');
-                    const stockPrice = doc.querySelector('.kf1m0').textContent;
-                    document.getElementById('result').innerText = `Current Price: $${stockPrice}`;
-                    // Use Twitter API to retrieve social media data
-                    fetch(`https://api.twitter.com/1.1/search/tweets.json?q=${stockSymbol}`)
-                        .then(response => response.json())
-                        .then(data => {
-                            const tweets = data.statuses;
-                            const sentimentAnalysis = analyzeSentiment(tweets);
-                            document.getElementById('social-media-analysis').innerText = `Social Media Sentiment: ${sentimentAnalysis}`;
-                        })
-                        .catch(error => console.error(error));
-                })
-                .catch(error => console.error(error));
-        }
-
-        // Analyze sentiment of social media data
-        function analyzeSentiment(tweets) {
-            let positiveCount = 0;
-            let negativeCount = 0;
-            let neutralCount = 0;
-            tweets.forEach(tweet => {
-                const text = tweet.text;
-                if (text.includes('buy') || text.includes('good')) {
-                    positiveCount++;
-                } else if (text.includes('sell') || text.includes('bad')) {
-                    negativeCount++;
-                } else {
-                    neutralCount++;
-                }
-            });
-            const sentiment = positiveCount > negativeCount ? 'Positive' : negativeCount > positiveCount ? 'Negative' : 'Neutral';
-            return sentiment;
-        }
-
-        // Show section functionality
-        function showSection(sectionId) {
-            var sections = document.getElementsByTagName('section');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].style.display = 'none';
-            }
-            document.getElementById(sectionId).style.display = 'block';
-        }
-    </script>
+  <ul>
+    <li>
+      <a href="#home">Home</a>
+    </li>
+    <li>
+      <a href="#login">Login</a>
+    </li>
+    <li>
+      <a href="#signup">Sign Up</a>
+    </li>
+  </ul>
+  <h1>Welcome to Delphi3 - DeepLearn</h1>
+  <p>Stock Predictor Donate Terms and Conditions</p>
+  <h1>Sign Up</h1>Name: Email: Password: Sign Up
+  <h1>Login</h1>Email: Password: Login
+  <h1>Stock Market Predictor</h1>Predict
+  <h1>Donate</h1>Amount: Donate
+  <h1>Delphi3 - DeepLearn Terms and Conditions</h1>
+  <p>Last Updated: 25/03/2025</p>
+  <h2>Introduction</h2>
+  <p>These Terms and Conditions ("Terms") govern your use of the Delphi3 - DeepLearn website and services. By using our website and services, you agree to be bound by these Terms.</p>
+  <h2>Definitions</h2>
+  <p>In these Terms, the following definitions apply:</p>
+  <ul>
+    <li>"We" or "us" means Delphi3 - DeepLearn.</li>
+    <li>"You" means the user of our website and services.</li>
+    <li>"Services" means the services provided by us, including the stock prediction tool.</li>
+  </ul>
+  <h2>Use of Services</h2>
+  <p>You must use our services only for lawful purposes and in accordance with these Terms. You must not:</p>
+  <ul>
+    <li>Use our services for any unlawful or unauthorized purpose.</li>
+    <li>Interfere with or disrupt our services.</li>
+    <li>Use our services to send spam or unsolicited messages.</li>
+  </ul>
+  <h2>Intellectual Property</h2>
+  <p>All intellectual property rights in our website and services, including the stock prediction tool, are owned by us or our licensors. You have no right to use our intellectual property except as expressly permitted by these Terms.</p>
+  <h2>Disclaimer of Warranties</h2>
+  <p>Our services are provided on an "as is" and "as available" basis. We disclaim all warranties, express or implied, including the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+  <h2>Limitation of Liability</h2>
+  <p>We will not be liable for any damages, including consequential, special, or punitive damages, arising out of or in connection with these Terms or the use of our services.</p>
+  <h2>Governing Law</h2>
+  <p>These Terms will be governed by and construed in accordance with the laws of England and Wales.</p>
+  <h2>Changes to Terms</h2>
+  <p>We reserve the right to modify or update these Terms at any time without prior notice. Your continued use of our services will be deemed acceptance of any changes to these Terms.</p>
 </body>
 </html>
